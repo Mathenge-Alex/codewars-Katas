@@ -6,3 +6,18 @@
 # "String" => "StRiNg"
 # "Weird string case" => "WeIrD StRiNg CaSe"
 
+# Solution
+
+def to_weird_case(words):
+    wds = [i.lower() for i in words[:]]
+    print(wds)
+    weird = []
+    for i in range(len(wds)):
+        if i % 2 == 0:
+            weird.append(wds[i].upper())
+        else:
+            weird.append(wds[i])
+    weird = str("".join(weird))
+    print(weird)
+
+    return weird

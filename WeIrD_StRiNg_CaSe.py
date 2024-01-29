@@ -21,3 +21,8 @@ def to_weird_case(words):
     print(weird)
 
     return weird
+
+# Test  case
+
+
+print(to_weird_case("Hello World"))

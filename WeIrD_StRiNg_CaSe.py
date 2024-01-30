@@ -10,7 +10,6 @@
 
 def to_weird_case(words):
     wds = [i.lower() for i in words[:]]
-    print(wds)
     weird = []
     for i in range(len(wds)):
         if i % 2 == 0:
@@ -18,11 +17,32 @@ def to_weird_case(words):
         else:
             weird.append(wds[i])
     weird = str("".join(weird))
-    print(weird)
 
     return weird
 
 # Test  case
 
 
-print(to_weird_case("Hello World"))
+
+
+#  For Each word:
+
+def to_weird_case(words):
+    words = words.split()
+    wds = [i.lower() for i in words[:]]
+    weird = []
+    for x in wds:
+        cluster = []
+        for i in range(len(x)):
+            if i % 2 == 0:
+                cluster.append(x[i].upper())
+            else:
+                cluster.append(x[i])
+        weird.append(cluster[:])
+    weird = ' '.join([''.join(wd) for wd in weird])
+
+    return weird
+
+
+print(to_weird_case("Hello World")) #HeLlO WoRlD
+print(to_weird_case("This is a test")) # ThIs Is A TeSt
